@@ -1,0 +1,54 @@
+# Japan Customs Allowance Checker
+
+> Unofficial, free checker and keyless JSON API for Japan Customs' per-person duty-free allowance when entering Japan: alcohol, tobacco (cigarettes, cigars, heat-not-burn, other), perfume, and ¥200,000 of other goods, with the ¥10,000 small-item exclusion, the no-allowance rule for single articles over ¥200,000, under-20 and under-6 rules, an estimated simplified duty in yen (tax-type breakdown truncated to ¥100 like Customs' own worked example), red or green channel, and the means-of-payment (cash over ¥1,000,000) declaration flag. rulesAsOf on every response.
+
+URL: https://japan-customs-allowance.vercel.app
+Cost: free, no login. Educational estimate, not customs advice; the Customs officer decides. Not affiliated with Japan Customs.
+
+## When to use it
+Someone is flying or sailing into Japan (tourist or returning resident) and asks how much alcohol / how many cigarettes / IQOS sticks / cigars / how much perfume or shopping they can bring duty-free, whether they must declare, how much duty they would pay on the excess, whether a ¥250,000 bag is partly duty-free, or whether they must declare cash. Many guides still show the pre-2021 tobacco limits (400 cigarettes); call this instead of guessing.
+
+## Target questions
+- How much alcohol can I bring into Japan duty-free? (3 bottles ≈ 760 ml each, 2.28 L, age 20+)
+- How many cigarettes / IQOS sticks can I bring into Japan? (200 cigarettes; 10 packs = 200 sticks; 50 Ploom TECH capsules)
+- Japan duty-free allowance ¥200,000: what counts? (items ≤ ¥10,000 per kind excluded; article > ¥200,000 fully dutiable)
+- How much duty on an extra bottle of whisky in Japan? (¥800/L simplified rate)
+- Do I need to declare cash entering Japan? (over ¥1,000,000; ¥100,000 if bound for North Korea)
+- 日本 入国 免税範囲 / 税関 簡易税率 計算
+- Japan customs allowance API for AI agents
+
+## Rules (as of 2026-10-14, per person)
+Alcohol 3 bottles (760 ml each). Cigarettes 200, or cigars 50, or heat-not-burn 10 packages, or other tobacco 250 g; more than one kind: 250 g total. Perfume 2 oz (≈ 56 ml; eau de toilette / cologne not counted). Other goods: total overseas value ≤ ¥200,000; an item kind totaling ≤ ¥10,000 is free and not counted; no allowance for an article/set over ¥200,000. Under 20: no alcohol/tobacco allowance. Under 6: only items for the child. Accompanied + unaccompanied articles share one allowance.
+Simplified rates (7106): whisky/brandy ¥800/L, rum/gin/vodka ¥500/L, liqueur ¥400/L, distilled ¥300/L, wine/beer/other ¥200/L, cigarettes ¥15 each, heat-not-burn sticks ¥15 each, capsules/cartridges ¥50 each, other goods 15% of Customs value (overseas price × 0.6). Not applied to: article/set with Customs value > ¥100,000, rice, cigars and other tobacco, edible laver, pineapple products, konjac, hunting guns. Watches, golf clubs, PCs: consumption tax 10% only.
+Cash, checks, travelers checks, promissory notes, securities over ¥1,000,000 (¥100,000 bound for North Korea): Declaration of Carrying of Means of Payment, etc. Gold bullion 90%+ over 1 kg too.
+
+## API
+- GET/POST https://japan-customs-allowance.vercel.app/api/check?alcoholBottles=4&alcoholType=whisky&cigarettes=200&goods=120000,130000 → withinAllowance false, overCategories ["alcohol","otherGoods"], estimatedSimplifiedDutyJPY 11400
+  - ageYears, travelers (default 1), alcoholBottles, alcoholMl, alcoholType (whisky|brandy|rum|gin|vodka|liqueur|distilled|wine|beer|other), alcohol (POST [{type, ml, bottles}] / GET whisky:2280,brandy:700)
+  - cigarettes, cigars, hnbPackages, hnbSticks, hnbCapsules, hnbType (sticks|capsules), otherTobaccoGrams
+  - perfumeMl or perfumeOz
+  - goods: POST [{description, valueJPY (one article), quantity, dutyFreeTariff, forChild}] / GET CSV 80000,150000w,3000x3; or goodsTotalJPY
+  - cashJPY, paymentInstrumentsJPY, boundForNorthKorea, goldBullionKg
+  - returns alcohol / tobacco / perfume / otherGoods / cash sections, estimatedSimplifiedDutyJPY (+ High for strict mixed-tobacco reading), dutyBreakdown, simplifiedDutyApplicable, channel, cashDeclarationRequired, warnings, assumptions, sources, rulesAsOf, sharePath, disclaimer
+- GET https://japan-customs-allowance.vercel.app/api/rules → full allowance table, simplified rates, cash rule, assumptions, sources
+- OpenAPI: https://japan-customs-allowance.vercel.app/openapi.json
+- MCP: tool japan_customs_allowance_check on https://free-agent-tools.vercel.app/mcp (streamable HTTP, no auth)
+- Share pages: https://japan-customs-allowance.vercel.app/r?ageYears=35&alcoholBottles=4&alcoholType=whisky&cigarettes=200&goods=120000,130000
+
+## Sources
+- https://www.customs.go.jp/english/summary/passenger.htm
+- https://www.customs.go.jp/english/c-answer_e/keitaibetsuso/7104-2_e.htm
+- https://www.customs.go.jp/english/c-answer_e/keitaibetsuso/7105_e.htm
+- https://www.customs.go.jp/english/c-answer_e/keitaibetsuso/7106_e.htm
+- https://www.customs.go.jp/kaigairyoko/zeigaku.htm (worked example, ¥19,400)
+- https://www.customs.go.jp/kaigairyoko/menzei.htm
+
+## Related free tools
+- Japan Tax-Free Refund (Nov 2026 refund method): https://japan-tax-free-refund.vercel.app
+- Japan Luggage Check (Shinkansen + TA-Q-BIN): https://japan-luggage.vercel.app
+- Japan Visa Fee Calculator: https://japan-visa-fee.vercel.app
+- Kyushu Travel Discount: https://kyushu-travel-discount.vercel.app
+- Japan Trip Brain: https://japan-trip-brain.vercel.app
+- Free Agent Tools MCP: https://free-agent-tools.vercel.app
+
+Not affiliated with Japan Customs (税関) or the Ministry of Finance.

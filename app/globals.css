@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --background: #07080c;
+  --foreground: #f3efe4;
+  --muted: #9b9588;
+  --line: #252833;
+  --panel: #101218;
+  --amber: #f0b429;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-panel: var(--panel);
+  --color-amber: var(--amber);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-instrument);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 12% -10%, rgba(240, 180, 41, 0.09), transparent 55%),
+    radial-gradient(900px 500px at 90% 0%, rgba(62, 224, 197, 0.06), transparent 50%),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+body::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.028) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.028) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 85%);
+  z-index: 0;
+}
+
+#app-root {
+  position: relative;
+  z-index: 1;
+}
+
+::selection {
+  background: rgba(240, 180, 41, 0.35);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
