@@ -47,6 +47,7 @@ Cash, checks, travelers checks, promissory notes, securities over Â¥1,000,000 (Â
 - Japan Tax-Free Refund (Nov 2026 refund method): https://japan-tax-free-refund.vercel.app
 - Japan Luggage Check (Shinkansen + TA-Q-BIN): https://japan-luggage.vercel.app
 - Japan Visa Fee Calculator: https://japan-visa-fee.vercel.app
+- Japan TB Screening Check (JPETS: do Philippine, Nepali, Vietnamese, Indonesian applicants need a TB Clearance Certificate for a COE/visa; Indonesia from 2027-01-04; keyless API): https://japan-tb-screening.vercel.app
 - Kyushu Travel Discount: https://kyushu-travel-discount.vercel.app
 - Japan Trip Brain: https://japan-trip-brain.vercel.app
 - Free Agent Tools MCP: https://free-agent-tools.vercel.app
