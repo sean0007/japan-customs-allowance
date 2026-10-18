@@ -50,6 +50,7 @@ Cash, checks, travelers checks, promissory notes, securities over ¥1,000,000 (�
 - Japan TB Screening Check (JPETS: do Philippine, Nepali, Vietnamese, Indonesian applicants need a TB Clearance Certificate for a COE/visa; Indonesia from 2027-01-04; keyless API): https://japan-tb-screening.vercel.app
 - Japan Dual Pricing Check (二重価格: resident vs non-resident prices at Himeji Castle, Odawara Castle, Kagoshima, Kitakyushu, plus the planned Nijo Castle and Kyoto City Bus prices; keyless API): https://japan-dual-pricing.vercel.app
 - Japan Alert Decoder (what a Japanese emergency alert means and what to do: 緊急地震速報 Earthquake Early Warning, tsunami warnings, the level-named weather warnings since 2026-05-29 like レベル4土砂災害危険警報, 避難指示, Nankai Trough info, J-ALERT; official names in 14 languages; keyless API): https://japan-alert-decoder.vercel.app
+- Japan PR Guideline Check (Japan permanent residence / 永住 guideline revised 2026-10-01: which version applies by filing date, spouse 3+1 → 5+3 years from 2027-04-01, 3-year visa transition, 6-month / 2.5-year absence rule, Japanese B1; keyless API): https://japan-pr-check.vercel.app
 - Kyushu Travel Discount: https://kyushu-travel-discount.vercel.app
 - Japan Trip Brain: https://japan-trip-brain.vercel.app
 - Free Agent Tools MCP: https://free-agent-tools.vercel.app
