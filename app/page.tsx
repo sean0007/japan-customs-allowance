@@ -4,9 +4,9 @@ import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { ALCOHOL_LABEL, ALCOHOL_RATE_PER_L, ALCOHOL_TYPES, RULES_AS_OF, SOURCES } from "@/lib/customs";
 import { EXAMPLE_SHARED, PUBLIC_URL, resultPath } from "@/lib/share";
 
-const title = "Japan customs allowance checker 2026: how much alcohol, cigarettes, perfume and shopping can you bring into Japan duty-free?";
+const title = "Japan customs duty-free allowance calculator & checker 2026";
 const description =
-  "Free Japan duty-free allowance checker for arrivals: 3 bottles of alcohol (760 ml each), 200 cigarettes or 10 IQOS packs, 2 oz perfume, ¥200,000 of other goods per adult. See what is over, the estimated duty in yen at Japan Customs' simplified rates, red or green channel, and whether to declare cash over ¥1,000,000. Free JSON API for AI agents. Unofficial estimate.";
+  "Free Japan customs duty-free allowance calculator for arrivals: 3 bottles of alcohol (760 ml each), 200 cigarettes or 10 IQOS packs, 2 oz perfume, ¥200,000 of other goods per adult. See what is over, the estimated duty in yen at Japan Customs' simplified rates, red or green channel, and whether to declare cash over ¥1,000,000. Free JSON API for AI agents. Unofficial estimate.";
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -32,6 +32,10 @@ const webAppLd = {
 };
 
 const faq: FaqItem[] = [
+  {
+    q: "Is there a Japan customs duty-free allowance calculator?",
+    a: "Yes, this one: a free, unofficial checker of Japan Customs' per-person duty-free allowance when entering Japan (3 bottles of alcohol, 200 cigarettes or one other kind of tobacco, 2 oz perfume, ¥200,000 of other goods). Enter what is in your bag to see what is within or over, the estimated duty in yen at Japan Customs' simplified rates, red or green channel, and whether cash over ¥1,000,000 needs the declaration form. The same check is a free keyless JSON API. Educational estimate, not affiliated with Japan Customs; the officer's assessment at the airport is final.",
+  },
   {
     q: "How much alcohol can I bring into Japan duty-free?",
     a: "3 bottles of about 760 ml each (2.28 L in total) per traveler aged 20 or over. Beyond that, Japan Customs' simplified rates are ¥800 per liter for whisky and brandy, ¥500 for rum, gin and vodka, ¥400 for liqueur, ¥300 for shochu and other distilled spirits, and ¥200 for wine, beer and other liquor. A fourth 750 ml bottle of whisky: 3,000 ml − 2,280 ml = 0.72 L × ¥800 = ¥576, truncated to ¥500.",
@@ -110,7 +114,10 @@ export default function HomePage() {
     <div className="mx-auto w-full max-w-6xl px-4 py-8 sm:py-10">
       <section className="max-w-3xl">
         <p className="font-mono text-[11px] tracking-[0.28em] text-amber uppercase">Free · Arriving in Japan · Customs 税関</p>
-        <h1 className="mt-3 font-display text-4xl leading-[1.05] tracking-tight sm:text-6xl">Japan customs allowance checker: is your duty-free haul OK?</h1>
+        <h1 className="mt-3 font-display text-4xl leading-[1.05] tracking-tight sm:text-6xl">Japan customs duty-free allowance calculator</h1>
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground sm:text-lg">
+          Per traveler, Japan&apos;s duty-free allowance on arrival is 3 bottles of alcohol of about 760 ml each and 200 cigarettes (or 10 packages of heat-not-burn tobacco, 50 cigars or 250 g of other tobacco) for ages 20 and over, plus 2 oz of perfume and ¥200,000 of other goods at overseas retail value. Above that, Japan Customs&apos; simplified rates apply, for example ¥800 per liter for whisky and brandy and 15% of a Customs value of about 60% of the overseas price for most shopping. This is a free, unofficial customs allowance calculator: enter what is in your bag to see what is over, the estimated duty in yen, red or green channel and whether cash over ¥1,000,000 must be declared, or call the same check through its keyless JSON API.
+        </p>
         <p className="mt-4 max-w-2xl text-lg font-medium text-foreground sm:text-xl">3 bottles, 200 cigarettes, 2 oz perfume and ¥200,000 of shopping per adult.</p>
         <p className="mt-2 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
           Enter what is in your bag. You see what is over, the duty Japan Customs&apos; simplified rates would charge in yen, red or green channel, and whether your cash needs the declaration form.
