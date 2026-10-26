@@ -53,6 +53,7 @@ Cash, checks, travelers checks, promissory notes, securities over ¥1,000,000 (�
 - Japan PR Guideline Check (Japan permanent residence / 永住 guideline revised 2026-10-01: which version applies by filing date, spouse 3+1 → 5+3 years from 2027-04-01, 3-year visa transition, 6-month / 2.5-year absence rule, Japanese B1; keyless API): https://japan-pr-check.vercel.app
 - Japan International Postage 2027 (Japan Post international mail prices now vs from 2027-02-01: EMS in 1 kg bands, air / surface parcels, small packets, International Air Packet, letters, postcards for any country; keyless API): https://japan-intl-postage.vercel.app
 - Japan Re-entry Deadline Check (when a foreign resident must be back in Japan: deemed re-entry 1 year or residence-card expiry if sooner, SPR 2 years, re-entry permits, 2-month special period while a renewal is pending; keyless API): https://japan-reentry-check.vercel.app
+- Japan Overseas Dependents Check (claim a relative living outside Japan as a dependent / 国外居住親族: age 16-29, 30-69 and 70+ rules, ¥380,000 remittance test, 2026 ¥620,000 income limit, deduction and tax saving; keyless API): https://japan-overseas-dependents.vercel.app
 - Kyushu Travel Discount: https://kyushu-travel-discount.vercel.app
 - Japan Trip Brain: https://japan-trip-brain.vercel.app
 - Free Agent Tools MCP: https://free-agent-tools.vercel.app
